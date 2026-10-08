@@ -1,14 +1,111 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Combox-Home </title> <!--titulo de la ventana -->
-    <link rel="icon" type="image/png" href="src/icons/my logo 0.1.png"> <!--logo de la ventana -->
+    <title> Combox-Home </title> titulo de la ventana -->
+    <link rel="icon" type="image/png" href="src/icons/my logo 0.1.png"> <!--logo de la ventana 
 </head>
-<body bgcolor="#7D7D7D"><!--color fondo de la ventana -->
-    <a href="src/singup.html" target="_blank">Sing up</a> | <!--agregar enlace de registro target="_blank" abre en otra pestaña -->
-    <a href="src/singin.html" target="_blank">Sing in</a> <!--iniciar secionhref agregar etiquetas  -->
+<body bgcolor="#7D7D7D"><!--color fondo de la ventana 
+    <a href="src/singup.html" target="_blank">Sing up</a> | <!--agregar enlace de registro target="_blank" abre en otra pestaña 
+    <a href="src/singin.html" target="_blank">Sing in</a> <!--iniciar secionhref agregar etiquetas  
 
 </body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Combox - Home</title>
+
+    <link rel="icon" type="image/png" href="src/icons/my logo 0.1.png">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #7D7D7D;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Tarjeta principal */
+        .home-container {
+            width: 402px;
+            margin: 150px auto;
+            padding: 35px 25px;
+            background-color: #eeeeee;
+            border: 2px solid #555555;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Título */
+        h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #000000;
+        }
+
+        /* Texto */
+        p {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        /* Botones */
+        .button {
+            display: block;
+            width: 100%;
+            height: 38px;
+            line-height: 38px;
+            margin-bottom: 12px;
+
+            background-color: #eeeeee;
+            border: 1px solid #888888;
+
+            color: #000000;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #dddddd;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="home-container">
+
+        <h1>Combox</h1>
+
+        <p>Welcome to Combox</p>
+
+        <a href="src/singup.html" target="_blank" class="button">
+            Sign Up
+        </a>
+
+        <a href="src/singin.html" target="_blank" class="button">
+            Sign In
+        </a>
+
+    </div>
+
+</body>
+
 </html>
