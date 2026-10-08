@@ -9,6 +9,7 @@
     $m_phone =  $_POST['mphone'];
     $e_email =  $_POST['email'];
     $p_assword = $_POST['pswd'];
+    $pass_enc   =md5($p_assword); ///encriptar la contraseña o tapar la contraseña 
 
     // Insert into database hacer el insertar en la base de datos 
     $sql = "
@@ -24,7 +25,7 @@
             '$l_name',
             '$m_phone',
             '$e_email',
-            '$p_assword'
+            '$pass_enc'
         )
     ";
     $local_res= pg_query($local_conn,$sql);
@@ -41,6 +42,10 @@
     }
     else
         echo"<br>User hasn't been created into supa database!!";
+
+    echo "<script>alert('User has bean created succesfully :::')</script> ";
+    header('refresh:0;url=singin.html');
+
     //mostrar los datos 
     /*
     echo"<br>Fisrt name is: ". $f_name;
