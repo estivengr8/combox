@@ -7,7 +7,13 @@
     <link rel="icon" type="image/png" href="icons/my logo 0.1.png"> <!--logo de la ventana -->
 </head>
 <body>
-     <body bgcolor="#7D7D7D"><!--color fondo de la ventana -->
-    
-</body>
+    <form name="login-from" action="singin.php" method="POST">
+            <center><h3>Login Form </h3></center>
+        <body bgcolor="#7D7D7D"><!--color fondo de la ventana -->
+        <table border="0" align="center">
+            <tr><td><input type="email" name="email" placeholder="Email" required></td></tr>
+            <tr><td><input type="password" name="pswd" placeholder="********" required></td></tr>
+            <tr><td colspan="2" align="center"><button>Login</button></td></tr>
+        </table>
+    </form>
 </html>

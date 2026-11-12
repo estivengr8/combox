@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Combox | Sing Up </title>
-    <link rel="icon" type="image/png" href="icons/my logo 0.1.png"> <!--logo de la ventana -->
+    <link rel="icon" type="image/png" href="src/icons/my logo 0.1.png"> <!--logo de la ventana -->
 </head>
 <body>
-    <body bgcolor="#7D7D7D"><!--color fondo de la ventana -->
-        <!--Crear registro con titulo campos agregar textos y boton -->
-        <h3>  Register new Combox user </h3>
-        <label>Firstname:</label><br>
-        <input type="text"><br>
-        <label>Lastname:</label><br>
-        <input type="text"><br>
-        <label>Mobil Number:</label><br>
-        <input type="text"><br>   
-        <label>Email:</label><br>
-        <input type="text"><br>  
-        <label>Password:</label><br>
-        <input type="text"> <br> 
-        <button> Register: </button>
-    
+    <form name="register-form" action="singup.php" method="post">
+        <style>
+            body {
+                text-align: center;
+                background-color: #7D7D7D;
+
+            }
+        </style>
+        <!-- Crear registro con titulo campos agregar textos y boton -->
+        <br><h3>  Register new Combox user </h3>
+        <br><label>Firstname:</label><br>
+        <input type="text" name="fname" required><br>
+        <br><label>Lastname:</label><br>
+        <input type="text" name="lname" required><br>
+        <br><label>Mobil Number:</label><br>
+        <input type="text" name="mphone" required><br>   
+        <br><label>Email:</label><br>
+        <input type="text" name="email" required><br>  
+        <br><label>Password:</label><br>
+        <input type="text" name="pswd" required> <br> 
+        <br><button> Register </button><br> 
+        <br><label>I already have an account</label>
+        <a href="signin.html" target="_blank">Sing in</a>
+    </form>
+</body>
 </body>
 </html>
