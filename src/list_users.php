@@ -33,88 +33,114 @@ if (!$res) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Users Combox</title>
     <link rel="icon" type="image/png" href="icons/my logo 0.1.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="bg-light">
 
-    <center>
-        <h3>List all</h3>
-    </center>
+    <div class="container mt-5">
 
-    <table border="1" align="center">
+        <center>
+            <h3 class="mb-4">List all</h3>
+        </center>
 
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Mobile</th>
-            <th>Email</th>
-            <th>Status</th>
-            <th>Photo</th>
-            <th>Actions</th>
-        </tr>
+        <div class="border rounded overflow-hidden shadow-sm bg-white">
 
-        <?php
-        while ($row = pg_fetch_assoc($res)) {
-        ?>
+            <div class="table-responsive">
 
-        <tr>
+                <table class="table table-striped table-hover mb-0 align-middle">
 
-            <td><?php echo htmlspecialchars($row['firstname']); ?></td>
+                    <thead class="table-primary">
 
-            <td><?php echo htmlspecialchars($row['lastname']); ?></td>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Photo</th>
+                            <th>Actions</th>
+                        </tr>
 
-            <td><?php echo htmlspecialchars($row['mobile_phone']); ?></td>
+                    </thead>
 
-            <td><?php echo htmlspecialchars($row['email']); ?></td>
+                    <tbody>
 
-            <td><?php echo htmlspecialchars($row['users_status']); ?></td>
+                    <?php
+                    while ($row = pg_fetch_assoc($res)) {
+                    ?>
 
-            <td align="center">
-                <img src="<?php echo htmlspecialchars($row['photo_url'] ?? ''); ?>" width="30">
-            </td>
+                    <tr>
 
-            <td>
+                        <td><?php echo htmlspecialchars($row['firstname']); ?></td>
 
-                <!-- Botón Ver -->
-                <a href="view_user.php?id=<?php echo urlencode($row['id']); ?>">
-                    <button type="button">
-                        <img src="icons/lupa.png" width="15">
-                        Ver
-                    </button>
-                </a>
+                        <td><?php echo htmlspecialchars($row['lastname']); ?></td>
 
-                <!-- Botón Editar -->
-                <a href="edit_user.php?id=<?php echo urlencode($row['id']); ?>">
-                    <button type="button">
-                        <img src="icons/lapiz.png" width="15">
-                        Editar
-                    </button>
-                </a>
+                        <td><?php echo htmlspecialchars($row['mobile_phone']); ?></td>
 
-                <!-- Botón Eliminar -->
-                <form action="delete_user.php" method="POST"
-                      style="display:inline;"
-                      onsubmit="return confirm('¿Deseas eliminar este usuario?');">
+                        <td><?php echo htmlspecialchars($row['email']); ?></td>
 
-                    <input type="hidden" name="id"
-                           value="<?php echo htmlspecialchars($row['id']); ?>">
+                        <td><?php echo htmlspecialchars($row['users_status']); ?></td>
 
-                    <button type="submit">
-                        <img src="icons/basura.png" width="15">
-                        Eliminar
-                    </button>
+                        <td align="center">
+                            <img src="<?php echo htmlspecialchars($row['photo_url'] ?? ''); ?>" width="30">
+                        </td>
 
-                </form>
+                        <td>
 
-            </td>
+                            <!-- Botón Ver -->
+                            <a href="view_user.php?id=<?php echo urlencode($row['id']); ?>">
+                                <button type="button" class="btn btn-primary btn-sm">
+                                    <img src="icons/lupa.png" width="15">
+                                    Ver
+                                </button>
+                            </a>
 
-        </tr>
+                            <!-- Botón Editar -->
+                            <a href="edit_user.php?id=<?php echo urlencode($row['id']); ?>">
+                                <button type="button" class="btn btn-warning btn-sm">
+                                    <img src="icons/lapiz.png" width="15">
+                                    Editar
+                                </button>
+                            </a>
+                            <!-- Botón Eliminar -->
+                            <a href="delete_user.php?user_id=<?php echo urlencode($row['id']); ?>"
+                            class="btn btn-danger btn-sm"
+                            onclick="return confirm('¿Deseas eliminar este usuario?');">
 
-        <?php
-        }
-        ?>
+                                <img src="icons/basura.png" width="15" alt="Delete icon">
+                                Eliminar
+                            </a>
+                            
+                            <!-- Botón Inactivar -->
+                            <a href="deactivate_user.php?user_id=<?php echo urlencode($row['id']); ?>"
+                                class="btn btn-secondary btn-sm"
+                            onclick="return confirm('¿Deseas Inactivar este usuario?');">
 
-    </table>
+                                <img src="icons/desactivar.png" width="15" alt="Deactivate icon">
+                                Inactivar
+
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    <?php
+                    }
+                    ?>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 </html>

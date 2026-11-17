@@ -1,3 +1,4 @@
+
 <?php
 require('../config/database.php');
 
@@ -31,6 +32,19 @@ $user = pg_fetch_assoc($result);   // una sola fila: el usuario a editar
 
         <label>Celular</label><br>
         <input type="text" name="mobile_phone" value="<?php echo $user['mobile_phone']; ?>" required><br><br>
+
+        <!-- Estado -->
+        <label>Estado</label><br>
+        <select name="status">
+            <option value="true" <?php if ($user['status'] == 't') echo 'selected'; ?>>
+                Active
+            </option>
+
+            <option value="false" <?php if ($user['status'] == 'f') echo 'selected'; ?>>
+                Inactive
+            </option>
+        </select>
+        <br><br>
 
         <?php if ($user['photo_url'] != "") { ?>
             <p>Foto actual:</p>
